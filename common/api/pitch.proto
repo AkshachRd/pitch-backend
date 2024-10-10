@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package="github.com/AkshachRd/common/api";
+
+package api;
+
+message Card {
+    string id = 1;
+    string user_id = 2;
+    string front_side = 3;
+    string back_side = 4;
+}
+
+service CardService {
+    rpc CreateCard(CreateCardRequest) returns (Card);
+}
+
+message CreateCardRequest {
+    Card card = 1;
+}
